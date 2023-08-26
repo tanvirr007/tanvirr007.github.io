@@ -1,10 +1,7 @@
 Welcome to the GitHub repository for my personal website! This website serves as an online portfolio showcasing my projects, skills, and interests.
 
 🚀 Features:
-
-•Interactive project gallery
-•Contact form for reaching out
-•Responsive design for various devices.
+Interactive project gallery. Contact form for reaching out. Responsive design for various devices.
 
 🛠️ Tech Stack:
 Built using HTML and CSS.
