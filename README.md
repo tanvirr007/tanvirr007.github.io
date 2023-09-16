@@ -3,8 +3,7 @@ Welcome to the GitHub repository for my personal website! This website serves as
 🚀 Features:
 Interactive project gallery. Contact form for reaching out. Responsive design for various devices.
 
-🛠️ Tech Stack:
-Built using HTML and CSS.
+🛠️ Tech Stack: Crafted with precision using HTML, CSS, and JavaScript, ensuring a seamless and visually appealing user experience.
 
 📚 Usage:
 Feel free to explore the website and view my projects. The website is live at
