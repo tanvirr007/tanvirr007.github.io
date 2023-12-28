@@ -204,6 +204,10 @@ span {
     background: var(--second-bg-color);
 }
 
+.footer-text {
+    margin: 0px auto;
+}
+
 .footer-text p {
     font-size: 1.6rem;
 }
