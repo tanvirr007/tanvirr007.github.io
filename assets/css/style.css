@@ -155,7 +155,7 @@ a {
     color: var(--white);
 }
 
-#projects {
+#cv {
     display: flex;
     margin: 0 auto;
     flex-direction: column;
