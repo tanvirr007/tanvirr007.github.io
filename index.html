@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work in Progress</title>
+  <style>
+    /* Reset & base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+      color: #333;
+    }
+
+    .container {
+      text-align: center;
+      padding: 40px 30px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      max-width: 600px;
+      width: 90%;
+      transition: transform 0.3s ease, opacity 1s ease;
+      position: relative;
+      opacity: 0; /* will fade in */
+    }
+
+    .container:hover {
+      transform: translateY(-5px);
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 2; /* more spacing between lines */
+      color: #555;
+      font-weight: 500;
+    }
+
+    .datetime {
+      margin-top: 25px;
+      font-size: 0.95rem;
+      color: #888;
+    }
+
+    /* Responsive font sizes */
+    @media (max-width: 768px) {
+      h1 { font-size: 1.7rem; }
+      p { font-size: 1.1rem; }
+      .datetime { font-size: 0.85rem; }
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 1.5rem; }
+      p { font-size: 1rem; }
+      .datetime { font-size: 0.8rem; }
+    }
+
+    /* subtle animated dots */
+    .dots::after {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      margin-left: 5px;
+      border-radius: 50%;
+      background: #3498db;
+      animation: bounce 1s infinite alternate;
+    }
+
+    @keyframes bounce {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-8px); }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>WIP <span class="dots"></span></h1>
+    <p>
+      Hi, this is Tanvir.<br>
+      Websiteite is under maintenance.<br>
+      Thanks!
+    </p>
+    <div class="datetime" id="datetime"></div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.querySelector('.container');
+      container.style.opacity = 0;
+      setTimeout(() => container.style.opacity = 1, 100);
+
+      // Date & Time update
+      const datetime = document.getElementById('datetime');
+      function updateTime() {
+        const now = new Date();
+        const options = {
+          weekday: 'long', // full weekday name, e.g., Tuesday
+          year: 'numeric',
+          month: 'long',   // full month name, e.g., January
+          day: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit'
+        };
+        datetime.textContent = now.toLocaleString('en-US', options);
+      }
+      updateTime(); // initial call
+      setInterval(updateTime, 1000); // update every second
+    });
+  </script>
+</body>
+</html>
