@@ -1,130 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Work in Progress</title>
-  <style>
-    /* Reset & base styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+  <!-- ===== META & SEO ===== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Just a random guy on the internet" />
+  <meta name="keywords" content="Tanvir Hasan, Portfolio, Web Developer, Open Source, Bangladesh, GitHub, tanvirr007" />
+  <meta name="author" content="Tanvir Hasan" />
+  <meta name="robots" content="index, follow" />
+  <title>Tanvir Hasan</title>
+  <link rel="icon" href="src/images/favicon.png" type="image/png" />
 
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-      color: #333;
-    }
+  <!-- ===== OPEN GRAPH ===== -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Tanvir Hasan" />
+  <meta property="og:description" content="Just a random guy on the internet" />
+  <meta property="og:url" content="https://tanvir.info/" />
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/tanvirr007" />
 
-    .container {
-      text-align: center;
-      padding: 40px 30px;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-      max-width: 600px;
-      width: 90%;
-      transition: transform 0.3s ease, opacity 1s ease;
-      position: relative;
-      opacity: 0; /* will fade in */
-    }
+  <!-- ===== TWITTER CARD ===== -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tanvir Hasan" />
+  <meta name="twitter:description" content="Just a random guy on the internet" />
 
-    .container:hover {
-      transform: translateY(-5px);
-    }
+  <!-- ===== FONTS ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
 
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #2c3e50;
-    }
+  <!-- ===== ICONS ===== -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-    p {
-      font-size: 1.2rem;
-      line-height: 2; /* more spacing between lines */
-      color: #555;
-      font-weight: 500;
-    }
-
-    .datetime {
-      margin-top: 25px;
-      font-size: 0.95rem;
-      color: #888;
-    }
-
-    /* Responsive font sizes */
-    @media (max-width: 768px) {
-      h1 { font-size: 1.7rem; }
-      p { font-size: 1.1rem; }
-      .datetime { font-size: 0.85rem; }
-    }
-
-    @media (max-width: 480px) {
-      h1 { font-size: 1.5rem; }
-      p { font-size: 1rem; }
-      .datetime { font-size: 0.8rem; }
-    }
-
-    /* subtle animated dots */
-    .dots::after {
-      content: '';
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      margin-left: 5px;
-      border-radius: 50%;
-      background: #3498db;
-      animation: bounce 1s infinite alternate;
-    }
-
-    @keyframes bounce {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(-8px); }
-    }
-
-  </style>
+  <!-- ===== STYLESHEET ===== -->
+  <link rel="stylesheet" href="src/styles.css" />
 </head>
+
 <body>
-  <div class="container">
-    <h1>WIP <span class="dots"></span></h1>
-    <p>
-      Hi, this is Tanvir.<br>
-      Websiteite is under maintenance.<br>
-      Thanks!
-    </p>
-    <div class="datetime" id="datetime"></div>
-  </div>
+  <!-- ===== NAVIGATION ===== -->
+  <nav id="navbar" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo" aria-label="Home">
+        <span class="logo-bracket">&lt;</span>TANVIR<span class="logo-bracket\">/&gt;</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="#about" class="nav-link">About</a></li>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const container = document.querySelector('.container');
-      container.style.opacity = 0;
-      setTimeout(() => container.style.opacity = 1, 100);
+        <li><a href="#projects" class="nav-link">Projects</a></li>
 
-      // Date & Time update
-      const datetime = document.getElementById('datetime');
-      function updateTime() {
-        const now = new Date();
-        const options = {
-          weekday: 'long', // full weekday name, e.g., Tuesday
-          year: 'numeric',
-          month: 'long',   // full month name, e.g., January
-          day: 'numeric',
-          hour: '2-digit',
-          minute: '2-digit',
-          second: '2-digit'
-        };
-        datetime.textContent = now.toLocaleString('en-US', options);
-      }
-      updateTime(); // initial call
-      setInterval(updateTime, 1000); // update every second
-    });
-  </script>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+        <i class="fas fa-moon" id="themeIcon"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section id="hero" class="hero-section" aria-label="Introduction">
+    <div class="hero-bg-grid" aria-hidden="true"></div>
+    <div class="hero-particles" id="heroParticles" aria-hidden="true"></div>
+    <div class="hero-content">
+      <h1 class="hero-name" id="heroName">Loading...</h1>
+      <p class="hero-tagline" id="heroTagline">Loading...</p>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="about" class="section" aria-label="About Me">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">About Me</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-avatar-col">
+          <div class="avatar-wrap">
+            <img src="src/images/avatar.png" alt="Tanvir Hasan" class="avatar-img" id="avatarImg" loading="lazy" />
+            <div class="avatar-ring" aria-hidden="true"></div>
+          </div>
+        </div>
+        <div class="about-text-col">
+          <p class="about-bio" id="aboutBio">Loading...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS SECTION ===== -->
+  <section id="projects" class="section" aria-label="Projects">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Projects</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="projects-grid" id="projectsGrid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE SECTION ===== -->
+  <section id="experience" class="section" aria-label="Experience">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Experience</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="experience-grid" id="experienceGrid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section id="contact" class="section section-alt" aria-label="Contact">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Contact</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="contact-content" id="contactContent">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <p class="footer-text">
+        &copy; <span id="footerYear"></span> TANVIR HASAN
+      </p>
+    </div>
+  </footer>
+
+
+
+  <!-- ===== SCRIPT ===== -->
+  <script src="src/script.js"></script>
 </body>
+
 </html>
