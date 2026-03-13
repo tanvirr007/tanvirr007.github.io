@@ -56,6 +56,14 @@ const DATA = {
       description: "An inventory management app to track real-time stock, audit items, and generate detailed sales reports with customizable options",
       technologies: ["React", "Vite", "Node.js", "Express"],
       link: "https://stock.tanvir.info/"
+    },
+    {
+      name: "Tic Tac Toe",
+      type: "Mini Web Game",
+      icon: "fas fa-gamepad",
+      description: "A simple Tic Tac Toe board game for two players",
+      technologies: ["HTML", "CSS", "JavaScript"],
+      link: "https://tanvir-projects-archive.github.io/tic-tac-toe/"
     }
   ],
 
