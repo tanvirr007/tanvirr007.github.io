@@ -59,9 +59,9 @@ const DATA = {
     },
     {
       name: "Tic Tac Toe",
-      type: "Mini Web Game",
+      type: "Web Game",
       icon: "fas fa-gamepad",
-      description: "A simple Tic Tac Toe board game for two players",
+      description: "A simple browser-based board game for two players",
       technologies: ["HTML", "CSS", "JavaScript"],
       link: "https://tanvir-projects-archive.github.io/tic-tac-toe/"
     }
