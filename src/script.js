@@ -64,6 +64,14 @@ const DATA = {
       description: "A simple browser-based board game for two players",
       technologies: ["HTML", "CSS", "JavaScript"],
       link: "https://tanvir-projects-archive.github.io/tic-tac-toe/"
+    },
+    {
+      name: "The Dot Game",
+      type: "Web Game",
+      icon: "fas fa-gamepad",
+      description: "A browser-based game where players connect dots to complete challenges",
+      technologies: ["HTML", "CSS", "JavaScript"],
+      link: "https://tanvirr007.github.io/the-dot-game"
     }
   ],
 
