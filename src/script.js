@@ -72,6 +72,14 @@ const DATA = {
       description: "A browser-based game where players connect dots to complete challenges",
       technologies: ["HTML", "CSS", "JavaScript"],
       link: "https://tanvirr007.github.io/the-dot-game"
+    },
+    {
+      name: "Class Routine",
+      type: "Web App",
+      icon: "fas fa-calendar-alt",
+      description: "A web application to view class schedule easily",
+      technologies: ["HTML", "CSS", "JavaScript"],
+      link: "https://tanvirr007.github.io/classess"
     }
   ],
 
